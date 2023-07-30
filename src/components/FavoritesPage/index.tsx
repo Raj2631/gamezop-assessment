@@ -45,7 +45,7 @@ const FavoritesPage = ({ gamesData }: { gamesData: GamesData }) => {
           ))}
         </GamesContainer>
       ) : (
-        <p className="text-red-500 text-xl text-center">
+        <p className="text-red-500 text-xl mt-10 text-center">
           No Games favorited yet!
         </p>
       )}

@@ -5,7 +5,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="p-4  sm:p-6  my-24">
+    <footer className="p-4  sm:p-6  mt-24">
       <div className="grid grid-cols-1  gap-8 lg:grid-cols-3">
         <div>
           <h1 className="text-hotPink  text-left w-full text-3xl font-semibold">

@@ -3,7 +3,6 @@ import FavoritesPage from "@/components/FavoritesPage";
 
 const Favorites = async () => {
   const gamesData = await fetchGames();
-
   return <FavoritesPage gamesData={gamesData} />;
 };
 

@@ -13,7 +13,7 @@ const SearchInput = () => {
         onSubmit={(e) => {
           e.preventDefault();
           if (searchText.length) {
-            router.push(`/search/${searchText.replaceAll(" ", "-")}`);
+            router.push(`/search/${encodeURIComponent(searchText.trim())}`);
           }
         }}
         className=" flex items-center bg-darkPurple rounded-full "
@@ -21,7 +21,7 @@ const SearchInput = () => {
         <Search size={20} className="ml-2 " />
         <input
           value={searchText}
-          onChange={(e) => setSearchText(e.target.value.toLowerCase().trim())}
+          onChange={(e) => setSearchText(e.target.value.toLowerCase())}
           type="text"
           placeholder="Search"
           className="p-2 border-none outline-none bg-transparent  flex-grow"

@@ -13,6 +13,16 @@ export default async function Category({
     (category) => category.category === params.category
   );
 
+  if (!currentCategory) {
+    return (
+      <div className="max-w-screen-2xl ">
+        <p className="text-red-500 text-xl text-center mt-10">
+          Invalid Category!
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-screen-2xl ">
       <h1 className=" text-3xl mb-12 font-semibold">

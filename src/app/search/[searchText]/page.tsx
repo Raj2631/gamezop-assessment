@@ -9,13 +9,15 @@ export default async function Search({
   params: { searchText: string };
 }) {
   const resp = await fetchGames();
+  const searchText = decodeURIComponent(params.searchText);
   const searchResults = resp?.games?.filter((game: Game) =>
-    game.name.toLowerCase().includes(params.searchText)
+    game.name.toLowerCase().includes(searchText)
   );
+
   return (
     <div className="max-w-screen-2xl ">
       <h1 className=" text-3xl mb-12 font-semibold">
-        Search results for {params.searchText}
+        Search results for {searchText}
       </h1>
       {searchResults?.length > 0 ? (
         <GamesContainer>
