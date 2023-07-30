@@ -34,7 +34,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 4. UI - To be really honest there are a lot of improvements that can be done in the UI, I wanted to do something completely different from the original gamezop site so it included a lot of trial and errors to find out what might work best. I actually wanted to add Framer motion but I'm kinda running out of time right now, but personally I'd like to improve it more later.
 5. PWA - Used next-pwa to turn our website into a PWA
 6. The game card lol - Actually I started working on this project on the weekend as I'd been busy with more assignments/challenges/work over the week and then I realized that our API didn't provide us with any image. For now I just went with a random pink color instead of an image, please assume that it's an image😂.
-7. Responsiveness - Used TailwindCSS as my style library, it follows a mobile first approach for responsiveness which makes things easier to work with.
+7. Suspense - I know it was mentioned in the mail to use Suspense, but it didn't make much sense as we're already using server components. I tried the app router way for creating instant loading states that's already built with suspense as mentioned in the docs [here](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming#instant-loading-states), but turns out it was still throwing the loading state when the data is already cached, kind of felt odd to use the application in that case so I just removed it from all the pages. But I need to look into this more as to why it would throw the loading state even with the cached data.
+8. Responsiveness - Used TailwindCSS as my style library, it follows a mobile first approach for responsiveness which makes things easier to work with.
 
 ## Conclusion
 
