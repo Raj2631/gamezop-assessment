@@ -7,6 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Gamezop Assessment",
+  description: "PWA app in Nextjs for Gamezop Assessment",
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({
