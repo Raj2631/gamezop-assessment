@@ -16,7 +16,7 @@ export default async function Search({
       <h1 className=" text-3xl mb-12 font-semibold">
         Search results for {params.searchText}
       </h1>
-      {searchResults.length > 0 ? (
+      {searchResults?.length > 0 ? (
         <GamesContainer>
           {searchResults?.map((game: any) => (
             <GameCard key={game.code} game={game} />

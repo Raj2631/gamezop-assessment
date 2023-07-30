@@ -24,7 +24,7 @@ const Sidebar = ({
           </Link>
         </h1>
       </div>
-      <nav className="flex w-full flex-col flex-wrap j text-left pl-14 gap-4 text-xl justify-center  mx-auto ">
+      <nav className="flex w-full flex-col flex-wrap text-left pl-14 gap-4 text-lg justify-center  mx-auto ">
         {ROUTES.map(({ title, route }) => (
           <div key={route} onClick={toggleNav}>
             <Link

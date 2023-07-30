@@ -3,9 +3,9 @@ import { API_ENDPOINT } from "./constants";
 
 export const fetchGames = async () => {
   try {
-    const resp = await axios.get(API_ENDPOINT);
-
-    const gamesData = resp.data.data;
+    const resp = await fetch(API_ENDPOINT);
+    const data = await resp.json();
+    const gamesData = data.data;
     const categories = [];
     for (const category in gamesData.categories) {
       const categoryData = {

@@ -14,14 +14,16 @@ const SearchInput = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          router.push(`/search/${searchText.replaceAll(" ", "-")}`);
+          if (searchText.length) {
+            router.push(`/search/${searchText.replaceAll(" ", "-")}`);
+          }
         }}
         className=" flex items-center bg-darkPurple rounded-full "
       >
         <Search size={20} className="ml-2 " />
         <input
           value={searchText}
-          onChange={(e) => setSearchText(e.target.value.toLowerCase())}
+          onChange={(e) => setSearchText(e.target.value.toLowerCase().trim())}
           type="text"
           placeholder="Search"
           className="p-2 border-none outline-none bg-transparent  flex-grow"

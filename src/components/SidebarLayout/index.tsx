@@ -17,7 +17,7 @@ const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Sidebar isNavOpen={isNavOpen} toggleNav={toggleNav} />
       <div className="bg-darkBlue md:pl-[24rem] mx-auto md:w-full h-screen overflow-auto ">
-        <div className="w-11/12 mx-auto h-full flex flex-col max-w-screen-xl">
+        <div className="w-11/12 mx-auto md:mx-0 h-full flex flex-col max-w-screen-2xl">
           <div className="flex-grow shrink-0 basis-auto">
             <nav className="h-24 block gap-4 flex justify-between w-full items-center">
               <Link
