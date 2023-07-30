@@ -32,7 +32,10 @@ const GameCard = ({ game, isFromFavoritesPage, removeFromFavorite }: any) => {
   };
 
   return (
-    <div key={game.code} className=" flex relative flex-col  justify-end w-44">
+    <div
+      key={game.code}
+      className=" flex relative flex-col  justify-end w-36 md:w-44"
+    >
       {/* <img src={} /> */}
       <button onClick={toggleLike}>
         <Heart
@@ -41,7 +44,7 @@ const GameCard = ({ game, isFromFavoritesPage, removeFromFavorite }: any) => {
       </button>
       <div
         className="
-   bg-hotPink rounded-lg h-52 "
+   bg-hotPink rounded-lg h-44 md:h-52"
       />
       <p className="w-full overflow-hidden whitespace-nowrap text-ellipsis	text-center">
         {game.name}

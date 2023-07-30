@@ -1,5 +1,6 @@
 import { fetchGames } from "@/commons/util";
 import GameCard from "@/components/GameCard";
+import GamesContainer from "@/components/GamesContainer";
 
 export default async function Category({
   params,
@@ -13,19 +14,19 @@ export default async function Category({
 
   return (
     <div className="max-w-screen-2xl ">
-      <h1 className="text-center text-3xl mb-12 font-semibold">
+      <h1 className=" text-3xl mb-12 font-semibold">
         {currentCategory?.title}
       </h1>
 
       {currentCategory?.games?.length > 0 ? (
-        <div className="flex align-center justify-between gap-6   flex-wrap ">
+        <GamesContainer>
           {currentCategory?.games.map((game: any) => (
             <GameCard key={game.code} game={game} />
           ))}
-        </div>
+        </GamesContainer>
       ) : (
         <p className="text-red-500 text-xl text-center">
-          No Games favorited yet!
+          No games available currently.
         </p>
       )}
     </div>

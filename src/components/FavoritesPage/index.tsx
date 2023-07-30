@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import GameCard from "../GameCard";
+import GamesContainer from "../GamesContainer";
 
 const FavoritesPage = ({ gamesData }: any) => {
   const [favoriteGames, setFavoriteGames] = useState([]);
@@ -22,9 +23,9 @@ const FavoritesPage = ({ gamesData }: any) => {
 
   return (
     <div className="max-w-screen-2xl ">
-      <h1 className="text-center text-3xl mb-12 font-semibold">My Favorites</h1>
+      <h1 className=" text-3xl mb-12 font-semibold">My Favorites</h1>
       {favoriteGames.length > 0 ? (
-        <div className="flex align-center justify-between gap-6 flex-wrap">
+        <GamesContainer>
           {favoriteGames?.map((game: any) => (
             <GameCard
               removeFromFavorite={removeFromFavorite}
@@ -33,7 +34,7 @@ const FavoritesPage = ({ gamesData }: any) => {
               game={game}
             />
           ))}
-        </div>
+        </GamesContainer>
       ) : (
         <p className="text-red-500 text-xl text-center">
           No Games favorited yet!

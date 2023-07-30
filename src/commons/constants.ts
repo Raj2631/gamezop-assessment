@@ -32,3 +32,12 @@ export const ROUTES = [
     route: "/favorites",
   },
 ];
+
+export const LANGUAGES = ["English", "हिंदी", "ଓଡିଆ", "ಕನ್ನಡ", "తెలుగు"];
+
+export const FOOTER_BUTTONS = [
+  "Submit a game",
+  "Jobs",
+  "Privacy Policy",
+  "Terms of Use",
+];
