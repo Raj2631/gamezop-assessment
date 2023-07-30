@@ -7,6 +7,8 @@ import Sidebar from "@/components/Sidebar";
 import { useState } from "react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import Search from "@/components/SearchInput";
+import SearchInput from "@/components/SearchInput";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,12 +34,19 @@ export default function RootLayout({
         <div className="bg-darkBlue md:pl-[24rem] mx-auto md:w-full h-screen overflow-auto ">
           <div className="w-11/12 mx-auto h-full flex flex-col max-w-screen-xl">
             <div className="flex-grow shrink-0 basis-auto">
-              <nav className="h-24 block md:hidden flex justify-between w-full items-center">
-                <Link href="/favorites" className="flex hover:text-white ">
-                  <Heart /> <div className="ml-2">My Favorite Games</div>
+              <nav className="h-24 block gap-4 flex justify-between w-full items-center">
+                <Link
+                  href="/search/hey"
+                  className="flex hover:text-white items-center"
+                >
+                  <Heart />{" "}
+                  <span className="ml-2 hidden md:block text-lg">
+                    My Favorites
+                  </span>
                 </Link>
+                <SearchInput />
                 <button
-                  className=" md:hidden flex items-center text-blue-500 p-3"
+                  className=" md:hidden flex items-center text-blue-500"
                   onClick={toggleNav}
                 >
                   {isNavOpen ? <X /> : <Menu />}

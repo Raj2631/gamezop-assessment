@@ -18,7 +18,7 @@ const Sidebar = ({
       } bg-darkPurple absolute w-[300px] h-screen top-0 left-0 z-10 fixed  transition-transform ease-in-out`}
     >
       <div>
-        <h1 className="text-hotPink my-8 text-left  pl-14  w-full text-3xl">
+        <h1 className="text-hotPink my-8 text-left  pl-14  w-full text-3xl font-semibold">
           <Link href="/" onClick={toggleNav}>
             Game<span className="text-gray-300">zop</span>
           </Link>

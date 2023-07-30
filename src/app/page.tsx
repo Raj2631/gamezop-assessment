@@ -2,7 +2,6 @@ import { API_ENDPOINT } from "@/commons/constants";
 import { fetchGames } from "@/commons/util";
 import GameCard from "@/components/GameCard";
 import GamesContainer from "@/components/GamesContainer";
-import Header from "@/components/Header";
 
 import Link from "next/link";
 
@@ -10,7 +9,6 @@ export default async function Home() {
   const data = await fetchGames();
   return (
     <main>
-      <Header gamesData={data?.categories} />
       <div className="max-w-screen-2xl">
         <div className="flex flex-col gap-20">
           {data?.categories?.map(({ title, games, category }) => (
