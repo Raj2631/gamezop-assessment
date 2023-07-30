@@ -1,5 +1,5 @@
 "use client";
-import { fetchGames } from "@/commons/util";
+import { fetchGames, getFavoritesFromLocal } from "@/commons/util";
 import { Heart } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
@@ -7,16 +7,15 @@ const GameCard = ({ game, isFromFavoritesPage, removeFromFavorite }: any) => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
 
   useEffect(() => {
-    const localGames = localStorage.getItem("favoriteGames");
-    const favoriteGames = localGames ? JSON.parse(localGames) : [];
-    const isCurrentGameFavorited = favoriteGames.includes(game.code);
+    let localFavGames: string[] = getFavoritesFromLocal();
+    const isCurrentGameFavorited = localFavGames.includes(game.code);
 
     setIsLiked(isCurrentGameFavorited);
   }, [game.code]);
 
   const toggleLike = () => {
-    const localGames = localStorage.getItem("favoriteGames");
-    let favoriteGames: string[] = localGames ? JSON.parse(localGames) : [];
+    let favoriteGames: string[] = getFavoritesFromLocal();
+
     if (isLiked) {
       favoriteGames = favoriteGames.filter(
         (gameCode: string) => gameCode !== game.code

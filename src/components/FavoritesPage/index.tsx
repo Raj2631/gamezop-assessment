@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react";
 import GameCard from "../GameCard";
 import GamesContainer from "../GamesContainer";
+import { getFavoritesFromLocal } from "@/commons/util";
 
 const FavoritesPage = ({ gamesData }: any) => {
   const [favoriteGames, setFavoriteGames] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const localGames = localStorage.getItem("favoriteGames");
-    const favoriteGames = localGames ? JSON.parse(localGames) : [];
+    const favoriteGames: string[] = getFavoritesFromLocal();
     setFavoriteGames(
       gamesData.games.filter((game: any) => favoriteGames.includes(game.code))
     );

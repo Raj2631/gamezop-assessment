@@ -1,21 +1,27 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../Sidebar";
 import Link from "next/link";
 import { Heart, Menu, X } from "lucide-react";
 import SearchInput from "../SearchInput";
 import Footer from "../Footer";
+import { usePathname } from "next/navigation";
 
 const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleNav = () => {
     setIsNavOpen((prev) => !prev);
   };
 
+  useEffect(() => {
+    setIsNavOpen(false);
+  }, [pathname]);
+
   return (
     <>
-      <Sidebar isNavOpen={isNavOpen} toggleNav={toggleNav} />
+      <Sidebar isNavOpen={isNavOpen} />
       <div className="bg-darkBlue md:pl-[24rem] mx-auto md:w-full h-screen overflow-auto ">
         <div className="w-11/12 mx-auto md:mx-0 h-full flex flex-col max-w-screen-2xl">
           <div className="flex-grow shrink-0 basis-auto">

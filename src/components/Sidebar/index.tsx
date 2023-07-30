@@ -3,13 +3,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
-const Sidebar = ({
-  isNavOpen,
-  toggleNav,
-}: {
-  isNavOpen: boolean;
-  toggleNav: () => void;
-}) => {
+const Sidebar = ({ isNavOpen }: { isNavOpen: boolean }) => {
   const pathname = usePathname();
   return (
     <div
@@ -19,14 +13,14 @@ const Sidebar = ({
     >
       <div>
         <h1 className="text-hotPink my-8 text-left  pl-14  w-full text-3xl font-semibold">
-          <Link href="/" onClick={toggleNav}>
+          <Link href="/">
             Game<span className="text-gray-300">zop</span>
           </Link>
         </h1>
       </div>
       <nav className="flex w-full flex-col flex-wrap text-left pl-14 gap-4 text-lg justify-center  mx-auto ">
         {ROUTES.map(({ title, route }) => (
-          <div key={route} onClick={toggleNav}>
+          <div key={route}>
             <Link
               className={`${
                 pathname === route

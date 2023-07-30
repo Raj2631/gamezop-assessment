@@ -22,3 +22,9 @@ export const fetchGames = async () => {
     console.log(error);
   }
 };
+
+export const getFavoritesFromLocal = () => {
+  let localGames = localStorage.getItem("favoriteGames");
+  let games: string[] = localGames ? JSON.parse(localGames) : [];
+  return games;
+};
