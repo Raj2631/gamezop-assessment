@@ -1,8 +1,6 @@
 "use client";
-import { fetchGames } from "@/commons/util";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
-// import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
 const SearchInput = () => {

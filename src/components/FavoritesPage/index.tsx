@@ -6,13 +6,15 @@ import GamesContainer from "../GamesContainer";
 
 const FavoritesPage = ({ gamesData }: any) => {
   const [favoriteGames, setFavoriteGames] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const localGames = localStorage.getItem("favoriteGames");
     const favoriteGames = localGames ? JSON.parse(localGames) : [];
-
     setFavoriteGames(
       gamesData.games.filter((game: any) => favoriteGames.includes(game.code))
     );
+    setLoading(false);
   }, [gamesData.games]);
 
   const removeFromFavorite = (gameCode: string) => {
@@ -20,6 +22,12 @@ const FavoritesPage = ({ gamesData }: any) => {
       favoriteGames.filter((game: any) => game.code !== gameCode)
     );
   };
+
+  if (loading) {
+    return (
+      <h1 className="text-xl font-semibold my-10 text-center">Loading...</h1>
+    );
+  }
 
   return (
     <div className="max-w-screen-2xl ">
