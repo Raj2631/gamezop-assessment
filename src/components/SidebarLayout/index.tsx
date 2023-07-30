@@ -21,7 +21,7 @@ const SidebarLayout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex-grow shrink-0 basis-auto">
             <nav className="h-24 block gap-4 flex justify-between w-full items-center">
               <Link
-                href="/search/hey"
+                href="/favorites"
                 className="flex hover:text-white items-center"
               >
                 <Heart />{" "}
