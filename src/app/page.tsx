@@ -1,4 +1,5 @@
 import { API_ENDPOINT } from "@/commons/constants";
+import { Game } from "@/commons/types";
 import { fetchGames } from "@/commons/util";
 import GameCard from "@/components/GameCard";
 import GamesContainer from "@/components/GamesContainer";
@@ -28,7 +29,7 @@ export default async function Home() {
               <GamesContainer>
                 {games
                   .slice(0, Math.floor(Math.random() * 4) + 10)
-                  .map((game: any) => (
+                  .map((game: Game) => (
                     <GameCard key={game.code} game={game} />
                   ))}
               </GamesContainer>

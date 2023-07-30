@@ -1,9 +1,20 @@
 "use client";
+import { Game } from "@/commons/types";
 import { fetchGames, getFavoritesFromLocal } from "@/commons/util";
 import { Heart } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
-const GameCard = ({ game, isFromFavoritesPage, removeFromFavorite }: any) => {
+interface Props {
+  game: Game;
+  isFromFavoritesPage?: boolean;
+  removeFromFavorite?: (gameCode: string) => void;
+}
+
+const GameCard = ({
+  game,
+  isFromFavoritesPage,
+  removeFromFavorite = (gameCode: string) => {},
+}: Props) => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
 
   useEffect(() => {

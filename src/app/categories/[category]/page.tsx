@@ -1,3 +1,4 @@
+import { Game } from "@/commons/types";
 import { fetchGames } from "@/commons/util";
 import GameCard from "@/components/GameCard";
 import GamesContainer from "@/components/GamesContainer";
@@ -20,7 +21,7 @@ export default async function Category({
 
       {currentCategory?.games?.length > 0 ? (
         <GamesContainer>
-          {currentCategory?.games.map((game: any) => (
+          {currentCategory?.games.map((game: Game) => (
             <GameCard key={game.code} game={game} />
           ))}
         </GamesContainer>

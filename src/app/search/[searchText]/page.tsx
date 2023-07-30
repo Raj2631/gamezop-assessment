@@ -1,3 +1,4 @@
+import { Game } from "@/commons/types";
 import { fetchGames } from "@/commons/util";
 import GameCard from "@/components/GameCard";
 import GamesContainer from "@/components/GamesContainer";
@@ -8,7 +9,7 @@ export default async function Search({
   params: { searchText: string };
 }) {
   const resp = await fetchGames();
-  const searchResults = resp?.games?.filter((game: any) =>
+  const searchResults = resp?.games?.filter((game: Game) =>
     game.name.toLowerCase().includes(params.searchText)
   );
   return (
@@ -18,7 +19,7 @@ export default async function Search({
       </h1>
       {searchResults?.length > 0 ? (
         <GamesContainer>
-          {searchResults?.map((game: any) => (
+          {searchResults?.map((game: Game) => (
             <GameCard key={game.code} game={game} />
           ))}
         </GamesContainer>

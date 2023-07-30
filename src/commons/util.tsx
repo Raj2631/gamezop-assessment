@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API_ENDPOINT } from "./constants";
+import { Game } from "./types";
 
 export const fetchGames = async () => {
   try {
@@ -11,8 +12,8 @@ export const fetchGames = async () => {
       const categoryData = {
         title: gamesData.categories[category],
         category,
-        games: gamesData.games.filter((game: any) =>
-          game.categories.includes(category)
+        games: gamesData.games.filter((game: Game) =>
+          game?.categories?.includes(category)
         ),
       };
       categories.push(categoryData);
